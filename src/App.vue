@@ -1,59 +1,57 @@
 <template>
-  <div id="app">
-    
-    <h1>{{title}}</h1> 
-    <Input />
-    <!-- <input v-model="email" type="text" />
-    <h1>{{email}}</h1>
-   <input v-model="username" type="text" />
-    <span :title="spanTitle">{{username}}</span>
-    
-    <h1 v-if="true">conmdutional true text</h1>
-    <h1 v-else>conmdutional true text</h1>-->
-    <div>
-      {{ textOnScreen }}
-    </div>
-    </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="orange"
+      dark
+    >
+      <div class="d-flex align-center">
+         <router-link to="/">Home</router-link> ||
+        <router-link to="/signup">signup</router-link>
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-  import input from "./components/Input.vue"
-  export default{
-    name : "AppComponent",
-    data(){
-        return{
-          title : "First Page",
-          /*username : "default value",
-          email : "payal.kamde@yash.com",
-          spanTitle : "user name is here",*/
 
-        };
-    },
-    components:{
-      input,
-    },
-    computed:{
-      textOnScreen(){
-        return "hello";
-        //const x = this.username;
-        //return x.toUpperCase();
-      },
-    },
-  };
+export default {
+  name: 'App',
 
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-
-  h1{
-    color:green
-  }
-</style>
