@@ -1,59 +1,22 @@
 <template>
-  <div id="app">
-    
-    <h1>{{title}}</h1> 
-    <Input />
-    <!-- <input v-model="email" type="text" />
-    <h1>{{email}}</h1>
-   <input v-model="username" type="text" />
-    <span :title="spanTitle">{{username}}</span>
-    
-    <h1 v-if="true">conmdutional true text</h1>
-    <h1 v-else>conmdutional true text</h1>-->
-    <div>
-      {{ textOnScreen }}
+  <v-app>
+    <div class="d-flex align-center">
+      <router-link to="/">Home</router-link> ||
+      <router-link to="/signup">signup</router-link> ||
+      <router-link to= "/DashBoard">dashboard</router-link>||
+      <router-link to= "/user">user</router-link>
     </div>
-    </div>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
-
 <script>
-  import input from "./components/Input.vue"
-  export default{
-    name : "AppComponent",
-    data(){
-        return{
-          title : "First Page",
-          /*username : "default value",
-          email : "payal.kamde@yash.com",
-          spanTitle : "user name is here",*/
+  export default {
+    name: 'App',
 
-        };
-    },
-    components:{
-      input,
-    },
-    computed:{
-      textOnScreen(){
-        return "hello";
-        //const x = this.username;
-        //return x.toUpperCase();
-      },
-    },
+    data: () => ({
+    //
+    }),
   };
-
 </script>
-
-<style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-
-  h1{
-    color:green
-  }
-</style>
